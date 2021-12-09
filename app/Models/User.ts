@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
-import { column, beforeSave, BaseModel } from '@ioc:Adonis/Lucid/Orm'
+import { column, beforeSave, BaseModel, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import CursoHasUsuario from 'App/Models/CursoHasUsuario'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -11,6 +12,12 @@ export default class User extends BaseModel {
 
   @column({ serializeAs: null })
   public password: string
+
+  @column()
+  public nome: string
+
+  @column()
+  public sobrenome: string
 
   @column()
   public rememberMeToken?: string
@@ -27,4 +34,10 @@ export default class User extends BaseModel {
       user.password = await Hash.make(user.password)
     }
   }
+
+@hasMany(() => CursoHasUsuario)
+  public cursos: HasMany<typeof CursoHasUsuario>
+
 }
+
+ 
