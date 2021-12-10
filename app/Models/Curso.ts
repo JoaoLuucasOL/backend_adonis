@@ -10,9 +10,6 @@ export default class Curso extends BaseModel {
   public titulo: string
 
   @column()
-  public avaliacao_usuarios: number
-
-  @column()
   public preco: number
 
   @column.dateTime({ autoCreate: true })
