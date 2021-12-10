@@ -1,7 +1,7 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class CursoHasUsuarios extends BaseSchema {
-  protected tableName = 'curso_has_usuario'
+  protected tableName = 'curso_has_usuarios'
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
@@ -20,7 +20,9 @@ export default class CursoHasUsuarios extends BaseSchema {
         .inTable("cursos")
         .onUpdate("CASCADE")
         .onDelete("CASCADE")  
-      table.integer("concluido_porcentagem")
+      table.integer("concluido_porcentagem", 100)
+      table.integer("avaliacao_usuario", 5)
+      
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

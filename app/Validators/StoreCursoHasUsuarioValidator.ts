@@ -1,7 +1,7 @@
 import { schema } from '@ioc:Adonis/Core/Validator'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-export default class StoreCursoValidator {
+export default class StoreCursoHasUsuarioValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   /*
@@ -23,14 +23,10 @@ export default class StoreCursoValidator {
    *     ])
    *    ```
    */
-
-  //public schema = schema.create({
-    //curso: schema.string()
-  //})  
-
   public schema = schema.create({
-    titulo: schema.string(),
-    preco: schema.number()
+    curso_id: schema.number(),
+    concluido_porcentagem: schema.number(),
+    avaliacao_usuario: schema.number()
   })
 
   /**

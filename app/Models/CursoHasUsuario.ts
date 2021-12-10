@@ -16,6 +16,9 @@ export default class CursoHasUsuario extends BaseModel {
   @column()
   public concluido_porcentagem: number
 
+  @column()
+  public avaliacao_usuario: number
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

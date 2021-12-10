@@ -26,6 +26,14 @@ Route.get('/', async () => {
 
 Route.post("/register", "AuthController.register")
 Route.post("/login", "AuthController.login")
+
 Route.group(() => {
   Route.resource("cursos", 'CursosController').apiOnly()
 })
+
+Route.get("/curso_usuario", "CursoHasUsuarioController.index")
+Route.get("/curso_usuario/:id", "CursoHasUsuarioController.show")
+
+Route.group(() => {
+  Route.resource("curso_usuario", 'CursoHasUsuarioController').apiOnly().except(['index', 'show'])
+}).middleware('auth')
