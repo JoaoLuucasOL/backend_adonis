@@ -60,6 +60,7 @@ const databaseConfig: DatabaseConfig = {
     | npm i pg
     |
     */
+    /*
     pg: {
       client: 'pg',
       connection: {
@@ -78,6 +79,7 @@ const databaseConfig: DatabaseConfig = {
       healthCheck: false,
       debug: false,
     },
+    */
 
   }
 }
