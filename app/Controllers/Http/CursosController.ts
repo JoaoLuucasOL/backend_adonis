@@ -30,6 +30,7 @@ export default class CursosController {
       const data = await request.validate(StoreCursoValidator)
       cursoDB.titulo = data.titulo
       cursoDB.preco = data.preco
+      cursoDB.descricao = data.descricao
       await cursoDB.save()
       return cursoDB
       

@@ -30,7 +30,8 @@ export default class StoreCursoValidator {
 
   public schema = schema.create({
     titulo: schema.string(),
-    preco: schema.number()
+    preco: schema.number(),
+    descricao: schema.string(),
   })
 
   /**

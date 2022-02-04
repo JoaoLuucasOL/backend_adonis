@@ -8,6 +8,7 @@ export default class Cursos extends BaseSchema {
       table.increments('id').primary()
       table.string('titulo', 45)
       table.decimal('preco')
+      table.string('descricao', 255)
       table
       .integer("user_id")
       .unsigned()
