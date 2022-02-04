@@ -12,6 +12,9 @@ export default class Curso extends BaseModel {
   @column()
   public preco: number
 
+  @column()
+  public user_id: number
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

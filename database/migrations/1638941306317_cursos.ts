@@ -8,6 +8,13 @@ export default class Cursos extends BaseSchema {
       table.increments('id').primary()
       table.string('titulo', 45)
       table.decimal('preco')
+      table
+      .integer("user_id")
+      .unsigned()
+      .references("id")
+      .inTable("users")
+      .onUpdate("CASCADE")
+      .onDelete("CASCADE")
 
 
       /**
