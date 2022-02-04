@@ -21,7 +21,7 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
-  return { hello: 'my beautiful world' }
+  return { hello: 'Lázaro, até ano que vem...' }
 })
 
 Route.post("/register", "AuthController.register")
